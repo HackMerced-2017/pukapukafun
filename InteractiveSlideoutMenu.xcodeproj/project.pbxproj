@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		440A70BA1E50550F00F04230 /* Dollar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 440A70B91E50550F00F04230 /* Dollar.framework */; };
+		440A70BD1E50552900F04230 /* AudioKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 440A70BB1E50551B00F04230 /* AudioKit.framework */; };
+		440A70BE1E50552900F04230 /* AudioKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 440A70BB1E50551B00F04230 /* AudioKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		440A70C11E50552D00F04230 /* Dollar.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 440A70B91E50550F00F04230 /* Dollar.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		C1B3789E1E4FA4CC00AB0039 /* logo1.png in Resources */ = {isa = PBXBuildFile; fileRef = C1B3789D1E4FA4CC00AB0039 /* logo1.png */; };
 		C1E4D2461E4FF345003AB6E5 /* ViewTwo.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1E4D2451E4FF345003AB6E5 /* ViewTwo.swift */; };
 		FCE69DB01C67A61B004247E0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE69DAF1C67A61B004247E0 /* AppDelegate.swift */; };
@@ -32,7 +36,24 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		440A70BF1E50552900F04230 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				440A70C11E50552D00F04230 /* Dollar.framework in Embed Frameworks */,
+				440A70BE1E50552900F04230 /* AudioKit.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		440A70B91E50550F00F04230 /* Dollar.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Dollar.framework; sourceTree = "<group>"; };
+		440A70BB1E50551B00F04230 /* AudioKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AudioKit.framework; sourceTree = "<group>"; };
 		C1B3789D1E4FA4CC00AB0039 /* logo1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo1.png; sourceTree = "<group>"; };
 		C1E4D2451E4FF345003AB6E5 /* ViewTwo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewTwo.swift; sourceTree = "<group>"; };
 		FCE69DAC1C67A61B004247E0 /* InteractiveSlideoutMenu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InteractiveSlideoutMenu.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -57,6 +78,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				440A70BD1E50552900F04230 /* AudioKit.framework in Frameworks */,
+				440A70BA1E50550F00F04230 /* Dollar.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -73,6 +96,8 @@
 		FCE69DA31C67A61B004247E0 = {
 			isa = PBXGroup;
 			children = (
+				440A70BB1E50551B00F04230 /* AudioKit.framework */,
+				440A70B91E50550F00F04230 /* Dollar.framework */,
 				FCE69DAE1C67A61B004247E0 /* InteractiveSlideoutMenu */,
 				FCE69DC31C67A61B004247E0 /* InteractiveSlideoutMenuUITests */,
 				FCE69DAD1C67A61B004247E0 /* Products */,
@@ -127,6 +152,7 @@
 				FCE69DA81C67A61B004247E0 /* Sources */,
 				FCE69DA91C67A61B004247E0 /* Frameworks */,
 				FCE69DAA1C67A61B004247E0 /* Resources */,
+				440A70BF1E50552900F04230 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -357,6 +383,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = InteractiveSlideoutMenu/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.thorntech.InteractiveSlideoutMenu;
@@ -369,6 +399,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = InteractiveSlideoutMenu/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.thorntech.InteractiveSlideoutMenu;
