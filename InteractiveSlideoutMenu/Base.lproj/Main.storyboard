@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" colorMatched="YES" initialViewController="hhN-NR-JOp">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" colorMatched="YES" initialViewController="9Gt-At-hQJ">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -21,18 +21,18 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="SONG-TITLE" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IXC-PP-ClY">
-                                <rect key="frame" x="33" y="92" width="318" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="CHORDS/LYRICS-HERE" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JGN-Ze-y5q">
                                 <rect key="frame" x="16" y="149" width="347" height="178"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="SONG-TITLE" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IXC-PP-ClY">
+                                <rect key="frame" x="30" y="28" width="318" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
@@ -46,7 +46,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="shp-CP-73G" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1023.5" y="282.5"/>
+            <point key="canvasLocation" x="1610.5" y="282.5"/>
         </scene>
         <!--Main View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -114,7 +114,7 @@
                     <rectEdge key="edges" left="YES"/>
                 </screenEdgePanGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="538.5" y="990.5"/>
+            <point key="canvasLocation" x="1125.5" y="990.5"/>
         </scene>
         <!--Search View Controller-->
         <scene sceneID="Rr9-sw-jdG">
@@ -132,6 +132,29 @@
                                 <rect key="frame" x="26" y="112" width="322" height="524"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" textLabel="VMR-KS-0JZ" style="IBUITableViewCellStyleDefault" id="kYA-MW-65q">
+                                        <rect key="frame" x="0.0" y="28" width="322" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="kYA-MW-65q" id="Y2g-8t-beq">
+                                            <rect key="frame" x="0.0" y="0.0" width="322" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="VMR-KS-0JZ">
+                                                    <rect key="frame" x="15" y="0.0" width="292" height="43"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="7mr-Jm-DcZ" id="Ynt-Lc-bDC"/>
+                                    <outlet property="delegate" destination="7mr-Jm-DcZ" id="VQ5-wf-Yuv"/>
+                                </connections>
                             </tableView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FdE-LU-vzD">
                                 <rect key="frame" x="37" y="72" width="303" height="21"/>
@@ -145,7 +168,8 @@
                     </view>
                     <navigationItem key="navigationItem" id="QBu-4V-GOW" customClass="ViewController"/>
                     <connections>
-                        <outlet property="userSearchLbl" destination="FdE-LU-vzD" id="TGJ-Fe-cc4"/>
+                        <outlet property="SongTableView" destination="M6a-kK-Xib" id="Qf0-vZ-pB8"/>
+                        <outlet property="userSearchLbl" destination="FdE-LU-vzD" id="6oN-ff-eb0"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZKY-Hf-MBy" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -153,22 +177,22 @@
             <point key="canvasLocation" x="317.5" y="1836.5"/>
         </scene>
         <!--Navigation Controller-->
-        <scene sceneID="CRF-zN-Zak">
+        <scene sceneID="Q3D-2a-esq">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="hhN-NR-JOp" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="9Gt-At-hQJ" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="MHD-HW-fdj">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="1hG-Dp-gFx">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="tLv-7y-35l"/>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="VTk-jF-ndI"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="2ax-gM-kbE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jHi-uX-ZFm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="73" y="991"/>
+            <point key="canvasLocation" x="538.5" y="990.5"/>
         </scene>
     </scenes>
     <resources>

@@ -43,6 +43,9 @@ class MainViewController: UIViewController {
         
     }
     
+    func getSearch() -> String {
+        return userSearchLbl.text!
+    }
 
    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -52,6 +55,10 @@ class MainViewController: UIViewController {
             print(destinationViewController)
             
             destinationViewController.LabelText = userSearchLbl.text!
+        }
+        
+        if let search = segue.destination as? SearchViewController {
+            search.labelText = self.userSearchLbl.text ?? ""
         }
     }
 

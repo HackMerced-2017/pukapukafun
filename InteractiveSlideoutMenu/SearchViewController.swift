@@ -9,23 +9,25 @@
 import Foundation
 import UIKit
 
-class SearchViewController : UIViewController{
+class SearchViewController : UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     
     @IBOutlet weak var userSearchLbl: UILabel!
-
-    var LabelText = String()
     
+    @IBOutlet weak var SongTableView: UITableView!
     
+    var labelText: String = ""
     
+    var songs: [(songName: String, id: Int)] = []
     
     override func viewDidLoad() {
-          userSearchLbl.text = "Search results for: " + LabelText
+        userSearchLbl.text = "Search results for: " + labelText
+        getSearchQuery()
     }
    
     func getSearchQuery() {
         // Querying a search for songs -- can be any term (ex: "Come Together", "The Beatles", "Paul McCartney"
-        let queryKeyword = LabelText
+        let queryKeyword = labelText
         
         let queryURL = "http://api.guitarparty.com/v2/songs/?query=\(queryKeyword)".addingPercentEncoding(withAllowedCharacters: NSCharacterSet.urlQueryAllowed)
         let songURL = URL(string: queryURL!)
@@ -71,6 +73,14 @@ class SearchViewController : UIViewController{
                         print(songTitle)
                         print(songArtist)
                         print(songArtistURL)
+                        //self.insertNewObject(songTitle)
+                        
+                        DispatchQueue.main.sync {
+                            
+                            self.songs.append((songTitle, songId.intValue))
+                            self.SongTableView.reloadData()
+                        }
+                        
                         
                     }
                     
@@ -82,7 +92,28 @@ class SearchViewController : UIViewController{
             }.resume()
     }
     
+     func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
     
+     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return songs.count
+    }
+    
+     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
+        
+        let (songName, _) = songs[indexPath.row]
+        cell.textLabel?.text = songName
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let (songName, id) = self.songs[indexPath.item]
+        
+        print("USER SELECTED \(songName) - \(id)")
+    }
+
 }
     
 
