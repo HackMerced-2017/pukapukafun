@@ -109,9 +109,10 @@ class SearchViewController : UIViewController, UITableViewDataSource, UITableVie
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let (songName, id) = self.songs[indexPath.item]
+        let (_, id) = self.songs[indexPath.item]
         
-        print("USER SELECTED \(songName) - \(id)")
+        LyricsViewController.present(from: self, for: id)
+        
     }
 
 }

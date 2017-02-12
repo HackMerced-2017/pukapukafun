@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -193,6 +194,81 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jHi-uX-ZFm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="538.5" y="990.5"/>
+        </scene>
+        <!--Lyrics View Controller-->
+        <scene sceneID="hgp-6Y-QTD">
+            <objects>
+                <viewController storyboardIdentifier="lyrics" id="cRy-T9-5zV" customClass="LyricsViewController" customModule="InteractiveSlideoutMenu" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ufS-rs-iR6"/>
+                        <viewControllerLayoutGuide type="bottom" id="Ypa-wv-w0b"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ija-JQ-P70">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="f3j-kw-bE3">
+                                <rect key="frame" x="66" y="95" width="243" height="477"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <string key="text">[Dm]Here come old flat top, 
+
+He come grooving up slowly,
+
+[Dm]He got Joo Joo eyeball, He one holy roller 
+
+He got [A7]hair down to his knee;  
+
+[G7]Got to be a joker, he just do what he please.
+
+ [Dm]He wear no shoe shine, he got toe jam football
+
+[Dm]He got monkey finger, he shoot co-ca cola
+
+He say, [A7]"I know you, you know me."  
+
+[G7]One thing I can tell you is you got to be free
+
+Come [Bm]Together, Right [G]now, [A]over me
+
+[Dm]He bag production, He got wal-rus gumboot
+
+[Dm]He got O-no sideboard, He one spinal cracker
+
+He got [A7]feet down below his knee
+
+[G7]Hold you in his armchair, you can feel his disease 
+
+Come [Bm]together, right [G]now, [A] over me
+
+[Dm]He roller coaster, he got early warning
+
+[Dm]He got muddy water, He one Mo-jo filter
+
+He say, [A7]" One and one and one is three."
+
+[G7]Got to be good looking 'cause he so hard to see 
+
+Come [Bm]together, right [G]now, [A]over me</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="f3j-kw-bE3" secondAttribute="trailing" constant="50" id="i03-cw-R5U"/>
+                            <constraint firstItem="f3j-kw-bE3" firstAttribute="centerY" secondItem="ija-JQ-P70" secondAttribute="centerY" id="ml9-Su-8kb"/>
+                            <constraint firstItem="f3j-kw-bE3" firstAttribute="centerX" secondItem="ija-JQ-P70" secondAttribute="centerX" id="nVP-cN-Sdt"/>
+                            <constraint firstItem="f3j-kw-bE3" firstAttribute="leading" secondItem="ija-JQ-P70" secondAttribute="leadingMargin" constant="50" id="ofo-Vn-B0F"/>
+                            <constraint firstItem="f3j-kw-bE3" firstAttribute="top" secondItem="ufS-rs-iR6" secondAttribute="bottom" constant="75" id="xW8-l7-zs7"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="textView" destination="f3j-kw-bE3" id="WOp-1Z-UXR"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DUh-1r-p0p" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2048" y="283"/>
         </scene>
     </scenes>
     <resources>
