@@ -12,10 +12,7 @@ import UIKit
 
 class ViewTwo : UIViewController{
     
-    
-    @IBOutlet weak var userSearchLbl: UILabel!
-    
-    @IBOutlet weak var userSearchNotFirstLbl: UITextField!
+
     
     @IBOutlet weak var chordsLyricsLbl: UILabel!
     
@@ -25,12 +22,12 @@ class ViewTwo : UIViewController{
     var LabelText = String()
 
     override func viewDidLoad() {
-        userSearchLbl.text = "You searched for: " + LabelText
+     super.viewDidLoad()
     }
     
     
     @IBAction func goSearchBtn(_ sender: UIButton) {
-        userSearchLbl.text = "You searched for: " + userSearchNotFirstLbl.text!
+     
         
         chordsLyricsLbl.text = "hiii"
         
