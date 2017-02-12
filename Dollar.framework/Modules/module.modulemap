@@ -1,0 +1,3 @@
+framework module Dollar {
+    header "Dollar-Swift.h"
+}
